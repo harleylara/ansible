@@ -1,0 +1,7 @@
+- name: Install packages (tmux, fzf, neofetch)
+  become: true
+  apt:
+    name: [ "tmux", "fzf", "neofetch", "net-tools" ]
+  tags:
+    - install
+    - tools
