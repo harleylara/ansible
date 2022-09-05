@@ -1,3 +1,3 @@
-- [ ] Add Packer
+- [x] Add Packer
 - [ ] Add node and npm
 - [ ] Add task to install my lsp servers
