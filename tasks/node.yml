@@ -40,7 +40,7 @@
 
 - name: Install Node
   become: true
-  shell: /home/{{ username }}/.local/.npm-global/bin/n 16
+  shell: n 16
   tags:
     - node
     - lsp
