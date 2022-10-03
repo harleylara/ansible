@@ -1,7 +1,7 @@
 - name: Clone n (Node version manager)
   git:
     repo: "https://github.com/tj/n.git"
-    dest: "{{ lookup('env', 'HOME') }}/tooling/n"
+    dest: "/home/{{ username }}/tooling/n"
   tags:
     - node
     - lsp
@@ -10,7 +10,7 @@
   become: true
   shell:
     cmd: make install
-    chdir: "{{ lookup('env', 'HOME') }}/tooling/n" 
+    chdir: "/home/{{ username }}/tooling/n" 
   tags:
     - node
     - lsp
