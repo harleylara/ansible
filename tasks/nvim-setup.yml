@@ -10,21 +10,31 @@
   tags:
     - install
     - neovim
-- name: Add ppa keys for neovim unstable
+# Build Neovim from source: https://github.com/neovim/neovim/wiki/Building-Neovim
+- name: Install prerequisites for build neovim
   become: true
-  apt_repository:
-    repo: ppa:neovim-ppa/unstable
-    state: present
-    update_cache: true
-- name: Install Neovim
+  apt:
+    name: ["ninja-build", "gettext", "libtool", "libtool-bin", "autoconf", "automake", "cmake", "g++", "pkg-config", "unzip", "curl", "doxygen"]
+  tags:
+    - neovim
+- name: Clone Neovim
+  git:
+    repo: 'https://github.com/neovim/neovim.git'
+    dest: "{{ tooling }}/neovim"
+  tags:
+    - neovim
+- name: Checkout stable Neovim
+  shell:
+    cmd: git checkout stable
+    chdir: "{{ tooling }}/neovim"
+  tags:
+    - neovim
+- name: Build neovim
+  shell: "cd {{ tooling }}/neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo"
+  tags:
+    - neovim
+- name: Install neovim
   become: true
-  apt: name=neovim
+  shell: "cd {{ tooling }}/neovim && make install"
   tags:
     - install
-    - neovim
-# - name: Install Vim-Plug
-#  shell: curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-#  tags:
-#    - install
-#    - dotfiles
-#    - neovim

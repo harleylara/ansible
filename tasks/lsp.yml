@@ -1,0 +1,32 @@
+- name: Dependencies for build sumneko lua lsp
+  become: true
+  apt:
+    name: ["ninja-build", "build-essential"]
+  tags:
+    - lsp
+    - lua
+
+- name: Get sumneko lua lsp
+  git:
+    repo: "https://github.com/sumneko/lua-language-server"
+    recursive: yes
+    dest: "{{ tooling }}/sumneko"
+  tags:
+    - lsp
+    - lua
+
+- name: Build sumneko from source part 1
+  shell:
+    cmd: ./compile/install.sh
+    chdir: "{{ tooling }}/sumneko/3rd/luamake"
+  tags:
+    - lsp
+    - lua
+
+- name: Build sumneko from source part 2
+  shell:
+    cmd: ./3rd/luamake/luamake rebuild
+    chdir: "{{ tooling }}/sumneko/"
+  tags:
+    - lsp
+    - lua

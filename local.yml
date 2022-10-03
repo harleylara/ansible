@@ -2,6 +2,7 @@
   vars:
     source_key: "./.ssh/id_ed25519"
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
+    tooling: "{{ lookup('env', 'HOME') }}/tooling"
   pre_tasks:
   - name: Update Apt
     become: true
@@ -12,10 +13,17 @@
     tags:
       - install
       - core
+  - name: Create directory for install tooling
+    file:
+      path: "{{ tooling }}"
+      state: directory
+    tags:
+      - core
   tasks:
     - include: tasks/ssh.yml
     - include: tasks/git-setup.yml
     - include: tasks/core-setup.yml
     - include: tasks/nvim-setup.yml
-    - include: tasks/dotfiles.yml
     - include: tasks/tools.yml
+    - include: tasks/lsp.yml
+    - include: tasks/dotfiles.yml
