@@ -2,4 +2,5 @@
 - [x] Add node and npm
 - [ ] Add task to install my lsp servers
     - [x] sumneko_lua https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua
-    - [ ] pyright https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pyright
+    - [x] pyright https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pyright
+    - [ ] tsserver https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver

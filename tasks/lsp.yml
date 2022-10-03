@@ -30,3 +30,12 @@
   tags:
     - lsp
     - lua
+
+- name: Install pyright
+  become: true
+  npm:
+    name: pyright
+    global: yes
+  tags:
+    - lsp
+    - python
