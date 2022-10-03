@@ -3,6 +3,7 @@
     source_key: "./.ssh/id_ed25519"
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
     tooling: "{{ lookup('env', 'HOME') }}/tooling"
+    username: "harley"
   pre_tasks:
   - name: Update Apt
     become: true
@@ -25,5 +26,6 @@
     - include: tasks/core-setup.yml
     - include: tasks/nvim-setup.yml
     - include: tasks/tools.yml
+    - include: tasks/node.yml
     - include: tasks/lsp.yml
     - include: tasks/dotfiles.yml

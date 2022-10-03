@@ -1,0 +1,46 @@
+- name: Install nodejs and npm
+  become: true
+  apt:
+    name: ["nodejs", "npm"]
+  tags:
+    - node
+    - lsp
+
+- name: npmjs prefix
+  shell: mkdir -p ~/.local/.npm-global
+  tags:
+  - node
+  - lsp
+
+- name: add npmjs to path
+  shell: PATH=~/.local/.npm-global/bin:$PATH
+  tags:
+  - node
+  - lsp
+
+- name: npmjs global settings
+  shell: npm config set prefix '~/.local/.npm-global'
+  tags:
+  - node
+  - lsp
+
+- name: npmjs global settings export path
+  shell: export PATH=~/.local/.npm-global/bin:$PATH
+  tags:
+  - node
+  - lsp
+
+- name: Install N (node version manager)
+  npm:
+    name: n
+    global: yes
+  tags:
+    - node
+    - lsp
+
+- name: Install Node
+  become: true
+  shell: /home/{{ username }}/.local/.npm-global/bin/n 16
+  tags:
+    - node
+    - lsp
