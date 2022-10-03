@@ -1,46 +1,24 @@
-- name: Install nodejs and npm
-  become: true
-  apt:
-    name: ["nodejs", "npm"]
+- name: Clone n (Node version manager)
+  git:
+    repo: "https://github.com/tj/n.git"
+    dest: "{{ lookup('env', 'HOME') }}/tooling/n"
   tags:
     - node
     - lsp
 
-- name: npmjs prefix
-  shell: mkdir -p ~/.local/.npm-global
-  tags:
-  - node
-  - lsp
-
-- name: add npmjs to path
-  shell: PATH=~/.local/.npm-global/bin:$PATH
-  tags:
-  - node
-  - lsp
-
-- name: npmjs global settings
-  shell: npm config set prefix '~/.local/.npm-global'
-  tags:
-  - node
-  - lsp
-
-- name: npmjs global settings export path
-  shell: export PATH=~/.local/.npm-global/bin:$PATH
-  tags:
-  - node
-  - lsp
-
-- name: Install N (node version manager)
-  npm:
-    name: n
-    global: yes
+- name: Install n
+  become: true
+  shell:
+    cmd: make install
+    chdir: "{{ lookup('env', 'HOME') }}/tooling/n" 
   tags:
     - node
     - lsp
 
-- name: Install Node
+- name: Install npm and node
   become: true
-  shell: n 16
+  shell:
+    cmd: n 16
   tags:
     - node
     - lsp
