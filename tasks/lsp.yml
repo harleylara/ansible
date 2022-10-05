@@ -31,6 +31,24 @@
     - lsp
     - lua
 
+- name: Install tsserver lsp for javascript
+  become: true
+  npm:
+    name: typescript-language-server
+    global: yes
+  tags:
+    - lsp
+    - javascript
+
+- name: Install typescript (requirement for lsp)
+  become: true
+  npm:
+    name: typescript
+    global: yes
+  tags:
+    - lsp
+    - javascript
+
 - name: Install pyright
   become: true
   npm:
