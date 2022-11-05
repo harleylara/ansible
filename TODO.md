@@ -5,3 +5,4 @@
     - [x] pyright https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pyright
     - [x] tsserver https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
 - [ ] Fix directory ownership from root to user
+- [ ] Add Go to the set of tools ???
