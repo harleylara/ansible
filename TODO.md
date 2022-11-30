@@ -4,5 +4,6 @@
     - [x] sumneko_lua https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua
     - [x] pyright https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pyright
     - [x] tsserver https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
+    - [ ] astro https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#astro
 - [ ] Fix directory ownership from root to user
 - [ ] Add Go to the set of tools ???
