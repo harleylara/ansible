@@ -57,3 +57,12 @@
   tags:
     - lsp
     - python
+
+- name: Install clangd for c, c++ and others c
+  become: true
+  apt:
+    name: clangd
+  tags:
+    - lsp
+    - c
+    - c++
