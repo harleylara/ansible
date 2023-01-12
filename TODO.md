@@ -1,6 +1,6 @@
 - [x] Add Packer
 - [x] Add node and npm
-- [ ] Add task to install my lsp servers
+- [ ] Add task to install my lsp servers (DEPRECATED: I became a mason)
     - [x] sumneko_lua https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua
     - [x] pyright https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pyright
     - [x] tsserver https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
