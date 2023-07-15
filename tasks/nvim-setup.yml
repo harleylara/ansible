@@ -18,8 +18,8 @@
     - neovim
 - name: Checkout stable Neovim
   shell:
+    chdir: "{{ tooling }}/neovim"    
     cmd: git checkout stable
-    chdir: "{{ tooling }}/neovim"
   tags:
     - neovim
 - name: Build neovim
