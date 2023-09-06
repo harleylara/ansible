@@ -16,6 +16,7 @@
     - lua
 
 - name: Build sumneko from source part 1
+  become: true
   shell:
     cmd: ./compile/install.sh
     chdir: "{{ tooling }}/sumneko/3rd/luamake"
@@ -24,6 +25,7 @@
     - lua
 
 - name: Build sumneko from source part 2
+  become: true
   shell:
     cmd: ./3rd/luamake/luamake rebuild
     chdir: "{{ tooling }}/sumneko/"
