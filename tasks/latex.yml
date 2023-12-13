@@ -1,0 +1,9 @@
+- name: Install latex related packages
+  become: true
+  apt:
+    name: ["texlive-latex-base", "latexmk"]
+    update_cache: yes
+  tags:
+    - latex
+    - install
+    - core
