@@ -19,7 +19,7 @@
 - name: Install System Packages 3 (the rest)
   become: true
   apt:
-    name: [ "curl", "htop", "python3-pip", "ripgrep" ]
+    name: [ "curl", "htop", "python3-pip", "ripgrep", "fd-find" ]
   tags:
     - install
     - core
