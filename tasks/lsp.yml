@@ -68,3 +68,11 @@
     - lsp
     - c
     - c++
+- name: Install go
+  become: true
+  apt:
+    name: golang-go
+  tags:
+    - lsp
+    - go
+    - gopls
