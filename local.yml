@@ -30,3 +30,4 @@
     - import_tasks: tasks/lsp.yml
     - import_tasks: tasks/dotfiles.yml
     - import_tasks: tasks/latex.yml
+    - import_tasks: tasks/sway.yml
