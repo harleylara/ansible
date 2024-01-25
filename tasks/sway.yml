@@ -1,4 +1,4 @@
-- name: Install Sway
+- name: Install Sway (easy-way)
   become: true
   apt:
     name: sway
