@@ -5,3 +5,15 @@
   tags:
     - desktop
     - sway
+
+# https://github.com/flameshot-org/flameshot/blob/master/docs/Sway%20and%20wlroots%20support.md
+- name: Integration with flameshot 
+  become: true
+  apt:
+    name:
+      - xdg-desktop-portal
+      - xdg-desktop-portal-wlr
+      - grim
+  tags:
+    - desktop
+    - sway
