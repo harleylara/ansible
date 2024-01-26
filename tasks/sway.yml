@@ -17,3 +17,14 @@
   tags:
     - desktop
     - sway
+
+# https://llandy3d.github.io/sway-on-ubuntu/extra/
+- name: Enable control function keys
+  become: true
+  apt:
+    name:
+      - brightnessctl
+      - pavucontrol
+  tags:
+    - desktop
+    - sway
