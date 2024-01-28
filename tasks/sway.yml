@@ -1,7 +1,10 @@
 - name: Install Sway (easy-way)
   become: true
   apt:
-    name: sway
+    name:
+      - sway
+      - swaylock
+      - swayidle
   tags:
     - desktop
     - sway
