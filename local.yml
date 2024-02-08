@@ -21,12 +21,6 @@
       state: directory
     tags:
       - core
-  - name: Create a directory for install applications
-    file:
-      path: "{{ applications }}"
-      state: directory
-    tags:
-      - core
   tasks:
     - import_tasks: tasks/ssh.yml
     - import_tasks: tasks/git-setup.yml
@@ -37,5 +31,3 @@
     - import_tasks: tasks/lsp.yml
     - import_tasks: tasks/dotfiles.yml
     - import_tasks: tasks/latex.yml
-    - import_tasks: tasks/sway.yml
-    - import_tasks: tasks/applications.yml
