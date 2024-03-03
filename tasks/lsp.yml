@@ -15,19 +15,9 @@
     - lsp
     - lua
 
-- name: Build sumneko from source part 1
-  become: true
+- name: Build Lua lsp from source
   shell:
-    cmd: ./compile/install.sh
-    chdir: "{{ tooling }}/sumneko/3rd/luamake"
-  tags:
-    - lsp
-    - lua
-
-- name: Build sumneko from source part 2
-  become: true
-  shell:
-    cmd: ./3rd/luamake/luamake rebuild
+    cmd: ./make.sh
     chdir: "{{ tooling }}/sumneko/"
   tags:
     - lsp
