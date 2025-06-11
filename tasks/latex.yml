@@ -7,3 +7,11 @@
     - latex
     - install
     - core
+- name: Install tree-sitter-cli (requirement for latex)
+  become: true
+  npm:
+    name: tree-sitter-cli
+    global: yes
+  tags:
+    - lsp
+    - latex
