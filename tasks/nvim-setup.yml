@@ -3,11 +3,17 @@
   tags:
     - install
     - neovim
-# Build Neovim from source: https://github.com/neovim/neovim/wiki/Building-Neovim
-- name: Install prerequisites for build neovim
+# Build Neovim from source: https://github.com/neovim/neovim/blob/master/BUILD.md
+- name: Install prerequisites for build neovim in Debian-based systems
   become: true
   apt:
-    name: ["ninja-build", "gettext", "libtool", "libtool-bin", "autoconf", "automake", "cmake", "g++", "pkg-config", "unzip", "curl", "doxygen"]
+    name:
+      - ninja-build
+      - gettext
+      - cmake
+      - curl
+      - build-essential
+      - git
   tags:
     - neovim
 - name: Clone Neovim
@@ -19,7 +25,7 @@
 - name: Checkout stable Neovim
   shell:
     chdir: "{{ tooling }}/neovim"
-    cmd: git checkout v0.11.4
+    cmd: git checkout v0.12.1
   tags:
     - neovim
 - name: Build neovim
