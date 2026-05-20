@@ -29,6 +29,7 @@
   tags:
     - neovim
 - name: Build neovim
+  become: true
   shell: "cd {{ tooling }}/neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo"
   tags:
     - neovim
