@@ -16,6 +16,7 @@
     - lua
 
 - name: Build Lua lsp from source
+  become: true
   shell:
     cmd: ./make.sh
     chdir: "{{ tooling }}/sumneko/"
